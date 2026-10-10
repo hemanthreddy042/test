@@ -1,0 +1,13 @@
+a = float(input("Enter the value:"))
+b = float(input("Enter the second value:"))
+c = input("Enter the action you wants to perform in alphabetic type:")
+if c == 'addition':
+    print("sum of the values is:", a+b)
+elif c == 'subtraction':
+    print("Difference of the values is:", a-b)
+elif c == 'multiplication':
+    print("multiplication of the values is:", a*b)
+elif c == 'division':
+    print("division of the values is:", a/b)
+else:
+    print("I am not that pro to calculate these questions")
