@@ -4,58 +4,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemanth Reddy</title>
-
+    <title>Love Theme</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: Arial, sans-serif;
-            background-color: #eaf2f8;
-            text-align: center;
-            padding: 50px;
+            background: linear-gradient(135deg, #ffe4ec 0%, #ffd6e7 30%, #ffc2d1 100%);
+            color: #6a1b45;
+            overflow: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "❤";
+            position: absolute;
+            font-size: 90px;
+            color: rgba(255, 105, 180, 0.18);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        body::before {
+            top: 80px;
+            left: 10%;
+        }
+
+        body::after {
+            bottom: 80px;
+            right: 12%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
         }
 
         .card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 400px;
-            margin: auto;
-            box-shadow: 0 4px 10px #aaa;
+            position: relative;
+            background: rgba(255, 255, 255, 0.75);
+            max-width: 430px;
+            width: 90%;
+            padding: 35px 28px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(148, 44, 93, 0.23);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffedf5;
+            color: #c2185b;
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         h1 {
-            color: #1565c0;
+            margin: 8px 0 18px;
+            font-size: 2.6rem;
+            color: #b81d5b;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7d3557;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #7d3557;
+            margin-bottom: 26px;
+        }
+
+        .heart {
+            font-size: 28px;
+            color: #ff4d8d;
+            animation: pulse 1.4s infinite;
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         button {
-            background-color: #1565c0;
-            color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         button:hover {
-            background-color: #0d47a1;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(194, 24, 91, 0.22);
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #ff4d8d, #d81b60);
+            color: white;
+        }
+
+        .secondary {
+            background: #fff0f6;
+            color: #b81d5b;
+            border: 1px solid #f7cfe0;
         }
     </style>
 </head>
 
 <body>
     <div class="card">
-        <h1>Hemanth Reddy</h1>
-        <p>Hello! Welcome to my webpage.</p>
-        <p>I am learning HTML and web development.</p>
+        <div class="badge">Made with love</div>
+        <h1>Hemanth Reddy <span class="heart">❤</span> Mamitha Baiju</h1>
+        <div class="subtitle">You are my favorite person <span class="heart">❤</span></div>
+        <p class="message">
+            Every day is brighter with your smile, and every moment feels warmer with your love.
+            May your life be filled with happiness, kindness, and endless joy.
+        </p>
 
-        <button onclick="showMessage()">
-            Click Me
-        </button>
+        <div class="buttons">
+            <button class="primary" onclick="showMessage()">Send Love</button>
+            <button class="secondary" onclick="showQuote()">Sparkle</button>
+        </div>
     </div>
 
     <script>
         function showMessage() {
-            alert("Hello, Hemanth Reddy A!");
+            alert("You are loved more than words can say 💖");
+        }
+
+        function showQuote() {
+            alert("Love is the flower you've got to let grow 🌷");
         }
     </script>
 </body>
